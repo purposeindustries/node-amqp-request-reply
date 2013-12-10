@@ -10,7 +10,7 @@ module.exports = function wrapper(conn) {
         anon.unsubscibe(deliveryInfo.consumerTag);
       });
       if(typeof exchange === 'string') {
-        return conn.exchange(exchange, onExchange);
+        return conn.exchange(exchange, {}, onExchange);
       }
       onExchange(exchange);
     });
